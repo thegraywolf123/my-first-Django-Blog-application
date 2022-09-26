@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  {% block title %}
+      Welcome to index
+  {% endblock %}
+  
+<style>
+        body{
+            background: rgb(255, 255, 255);
+            
+        }
+        @media screen and(max-width: 500px ) {
+            body{
+                overflow-x: hidden;
+                overflow-y: hidden;
+            }
+           
+        }
+
+        
+        a{
+          text-decoration: none;
+        }
+        
+        #ric{
+            box-shadow: 0px 0px 4px rgb(75, 74, 74);
+            color: rgb(65, 61, 61);
+            background: rgb(236, 236, 236);
+            font-weight: bold;
+            border-radius: 4px;
+            text-align: center;
+            /* padding: 5px; */
+        }
+        /* #ric:hover{
+            box-shadow: 10px 4px 4px rgb(82, 80, 80);
+            margin-left: 5px;
+            
+            background: rgb(169, 166, 166);
+            color: white;
+            transition: ease-out 1s;
+            cursor: pointer;
+        }*/
+        #ric a h1:hover{
+          color: rgb(123, 8, 224);
+          transition: 1s;
+        } 
+        .olu{
+          background: black;
+          color: rgb(127, 124, 124);
+          
+        }
+        .olaa{
+          border: 1px solid rgb(23, 22, 22);
+          background: rgb(142, 139, 139);
+          border-radius: 4px;
+          color: white;
+          font-weight: bold;
+          cursor: pointer;
+        }
+        .olaa:hover{
+          color: black;
+          background: white;
+          transition: 1s;
+        }
+        h4{
+          background: rgb(72, 72, 185);
+          /* text-align: center; */
+          display: inline-block;
+          margin-left: 25%;
+          font-weight: bold;
+          padding: 5px;
+        }
+    </style>
+      <div class="container-fluid">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <img src="media/work-3.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h1 style="color: white; font-weight:bold;"> Welcome To The GrayBlog</h1>
+                <p style="color: rgb(44, 17, 33); font-weight:bold; ">I'm Richard Onyekachi aka TheGrayWolf. i'm a coder, blogger and web designer based in Nigeria, with a passion for everything creative, business and boxing oriented</p>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="media/download (1).jfif" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Some representative placeholder content for the second slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="media/work-6.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <marquee behavior="right" direction="left" style="color: rgb(14, 165, 252); font-weight:bold;">You Are Welcome To My First Blog. For More Enquiry Contact My No:- 09075293329</marquee>
+      <div class="container-fluid">
+
+        <div class="row justify-content-md-center">
+        <div class="col-sm-9 col-md-6 pt-5" >
+
+        {% for p in posts %}
+
+        
+            <br>
+            <div  id="ric">
+              <div class="col-12">
+                <a class="text-dark" href="{{p.get_absolute_url}}" target=""><h1 style="color: rgb(12, 12, 113); font-weight:bold;">{{ p.title }}</h1>
+              <img src="{{ p.image.url }}" alt="show please" width="60%">
+              <div><h3 style="color: rgb(159, 74, 5); font-weight:bold;">{{ p.excerpt }}</h3></div> 
+                <div><i>{{ p.author }}</i></div>
+                <div>{{ p.publish }}</div> <br>
+              </a></div>
+          </div>
+
+        
+
+      {% endfor %}
+        </div>
+        <div class=" col-md-4 pt-5">
+         
+          <div class="row">
+              <div class="olaa">
+                <div class="col-lg-12">
+                  <h4>Trending News</h4>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat non odio ea repellendus cum eveniet aut dignissimos neque atque necessitatibus modi facilis, praesentium exercitationem debitis voluptates quasi ex quae quibusdam. Autem, mollitia. Soluta recusandae, quaerat nemo ut perspiciatis fuga!</p>
+                </div>
+              </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="olaa">
+              <div class="col-lg-12">
+                <h4>Ukraine News</h4>
+                <br>
+                <img src="media/AA11Okix_CGU99dG.jfif" alt="image" width="100%">
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat non odio ea repellendus .</p>
+              </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="olaa">
+            <div class="col-lg-12">
+              <h4>Latest News</h4>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat non odio ea repellendus cum eveniet aut dignissimos neque atque necessitatibus modi facilis, praesentium exercitationem debitis voluptates quasi ex quae quibusdam. Autem, mollitia. Soluta recusandae, quaerat nemo ut perspiciatis fuga!</p>
+            </div>
+          </div>
+      </div>
+      <br>
+      </div> 
+   
+      <br>
+      <br>
+      <br>
+      
+        {% include 'footer.html' %}
+      
+
+        {% endblock %}
