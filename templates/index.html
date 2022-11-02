@@ -12,9 +12,10 @@
             
         }
         @media screen and(max-width: 500px ) {
-            body{
+            body{ 
                 overflow-x: hidden;
                 overflow-y: hidden;
+                
             }
            
         }
@@ -72,6 +73,17 @@
           font-weight: bold;
           padding: 5px;
         }
+        i:hover{
+          color: rgb(18, 88, 186);
+        }
+        .card{
+          color: black;
+        }
+        #alirt{
+          width:60%;
+          margin-left: auto;
+          margin-right: auto;
+        }
     </style>
       <div class="container-fluid">
         <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
@@ -113,6 +125,19 @@
           </button>
         </div>
       </div>
+      <br>
+
+      <div class="container">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert" id="alirt">
+          <strong>Lastest News Notification!</strong> 
+          <br/>
+          <br>
+          You should check in on some of those fields below.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        
+      </div>
+
       <marquee behavior="right" direction="left" style="color: rgb(14, 165, 252); font-weight:bold;">You Are Welcome To My First Blog. For More Enquiry Contact My No:- 09075293329</marquee>
       <div class="container-fluid">
 
@@ -137,11 +162,12 @@
 
       {% endfor %}
         </div>
-        <div class=" col-md-4 pt-5">
+        <br>
+        <div class=" col-md-4 pt-5 " style="margin-top: 2%;">
          
           <div class="row">
               <div class="olaa">
-                <div class="col-lg-12">
+                <div class="col-lg-12 ">
                   <h4>Trending News</h4>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat non odio ea repellendus cum eveniet aut dignissimos neque atque necessitatibus modi facilis, praesentium exercitationem debitis voluptates quasi ex quae quibusdam. Autem, mollitia. Soluta recusandae, quaerat nemo ut perspiciatis fuga!</p>
                 </div>
@@ -149,12 +175,17 @@
           </div>
           <br>
           <div class="row">
-            <div class="olaa">
+            <div class="">
               <div class="col-lg-12">
-                <h4>Ukraine News</h4>
-                <br>
-                <img src="media/AA11Okix_CGU99dG.jfif" alt="image" width="100%">
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat non odio ea repellendus .</p>
+                <div class="card" style="width: 18rem;">
+                  <img src="media/AA11Okix_CGU99dG.jfif" class="card-img-top" alt="image..." width="100%">
+                  <div class="card-body">
+                    <h5 class="card-title">Ukraine News</h5>
+                    <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat non odio ea repellendus .</p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                  </div>
+                </div>
+                
               </div>
             </div>
         </div>
