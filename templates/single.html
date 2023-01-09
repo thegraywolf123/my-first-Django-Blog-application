@@ -21,7 +21,7 @@ Welcome to Single
 <br>
     <div class="container">
 
-      <div class="row ">
+      <div class="row pt-5">
       <div class="col-md-8" id="sam">
           <div  id="ric">
            <div class="col-12"><h3>{{ post.title }}</h3></div>
@@ -29,7 +29,7 @@ Welcome to Single
           
         
            <img src="{{ post.image.url }}" alt="show please" width="100%"> <br> <br>
-           <div class="col-12"><p>{{ post.content }}</p></div>
+           <div class="col-12"><p>{{ post.content|safe}}</p></div>
               <i>{{ post.author }}</i> <br>
               {{ post.publish }} <br><br>
           </div>

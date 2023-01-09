@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% block title %}
+Welcome to News API
+{% endblock %}
+
+
+    <h1 class="text-center">News Using API</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Search Country</h2>
+
+    <form action="" method="get">
+        <input type="text" name="country">
+        <button type="submit" value="Search">Search</button>
+    </form>
+        </div>
+        <div class="col">
+            <h2>Search Category</h2>
+
+            <form action="" method="get">
+                <input type="text" name="category">
+                <button type="submit" value="Search">Search</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+    
+   
+
+   
+
+
+
+ 
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                {% for i in articles %}
+
+                    <div class="card rounded shadow-lg m-2" style="width: 25rem;">
+                        <img src="{{ i.urlToImage }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <p class="card-text">{{ i.author }}</p>
+                        <h5 class="card-title">{{ i.title }}</h5>
+                        <p class="card-title">{{ i.source.name }}</p>
+                        <p class="card-text">{{ i.description }}</p>
+                        <hr>
+                        <small>date: {{ i.publishedAt }}</small>
+                        <a href="{{ i.url }}" target="_blank" class="btn btn-success m-1">See News</a>
+                        </div>
+                    </div>
+
+                  {% endfor %}
+            </div>
+            <br>
+            <br>
+            <div class="col-md-4">
+                <br>
+                <br>
+                <h3><b>Category</b></h3>
+                <hr>
+                <br>
+                <ul class="list-group">
+                    <li class="list-group-item"><a class="btn btn-secondary" href="{% url 'home' %}?category=technology">Technology</a></li>
+                    <li class="list-group-item"><a class="btn btn-success" href="{% url 'home' %}?category=health">Health</a></li>
+                    <li class="list-group-item"><a class="btn btn-danger" href="{% url 'home' %}?category=Entertainment">Entertainment</a></li>
+                    <li class="list-group-item"><a class="btn btn-secondary" href="{% url 'home' %}?category=Sports">Sports</a></li>
+                    <li class="list-group-item"><a class="btn btn-primary" href="{% url 'home' %}?category=Science">Science</a></li>
+                    <li class="list-group-item"><a class="btn btn-info" href="{% url 'home' %}?category=Business">Business</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+{% include 'footer.html' %}
+
+
+    {% endblock %}
